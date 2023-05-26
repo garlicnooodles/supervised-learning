@@ -50,5 +50,12 @@ def gradient_descent(X,theta_in,b_in,y,alpha,epoch):
             print(f"iteration {i:4d}: Cost {plot_cost[-1]:8.2f} ")
     return theta,b,plot_cost
 
+#validation scores
+def val_scores(X,y,theta,b):
+    X,y=to_numpy_arrays(X,y)
+    y_hat=hyp(X,theta,b)
+    J=cost_function(X,theta,b,y)
+    return J
+
 if __name__ == '__main__':
     print("Hola")
